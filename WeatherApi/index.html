@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Signika:wght@300&display=swap"
+        rel="stylesheet">
+    <style>
+        .weather {
+            font-style: normal;
+            font-weight: 100;
+            font-size: larger;
+        }
+
+        .img {
+            background-image: url(asp.jpg);
+            display: flex;
+            justify-content: center;
+            margin: 0 auto;
+            align-items: center;
+            height: 80vh;
+            font-family: 'Signika', sans-serif;
+
+        }
+
+        .card {
+
+
+            background-color: hsla(59, 87%, 54%, 0.416);
+            box-shadow: 0 0 5px 0;
+            background: inherit;
+            backdrop-filter: blur(14px);
+            padding: 1cm;
+            border-radius: 25px;
+            width: 100%;
+            max-width: 420px;
+            margin: 0cm;
+            color: black;
+            font-style: italic;
+        }
+
+        /*
+ rgb(111, 0, 255),
+*/
+        .heading {
+            margin-top: 0%;
+            text-align: center;
+            font-size: 30px;
+            text-transform: uppercase;
+            font-weight: bolder;
+            cursor: not-allowed;
+            color: rgb(248, 246, 246);
+
+        }
+
+        .search-bar {
+            display: inline-block;
+            height: 29px;
+            width: 300px;
+            color: rgb(247, 247, 247);
+            background-color: #202012d0;
+            text-align: center;
+            font-weight: normal;
+            margin-left: 60px;
+            padding: 15px;
+            font-size: 15px;
+            outline: 0.1em;
+            margin: 0;
+            box-sizing: border-box;
+            border-width: 0ch;
+        }
+
+        .description::first-letter {
+            text-transform: capitalize;
+        }
+
+        .button {
+
+            display: inline-block;
+            background-color: #202012d0;
+            border-radius: 0.5px;
+            height: 30px;
+            width: 31px;
+            padding: 0%;
+            font-size: 15px;
+            border: none;
+            cursor: pointer;
+            margin: 0;
+            color: aliceblue;
+            position: absolute;
+        }
+
+
+
+        .button:before,
+        .button:after {
+            border-radius: 20%;
+            background: white;
+
+            padding: auto;
+
+        }
+
+        .button:before {
+            top: -15px;
+            left: -15px;
+        }
+
+        .button:after {
+            bottom: -15px;
+            right: -15px;
+
+        }
+
+        .button:hover {
+            background: rgba(3, 0, 0, 0.911);
+            border: none;
+            color: rgb(255, 255, 255);
+            transition: background .02s .1s;
+        }
+
+        .block .button:hover:before,
+        .block .button:hover:after {
+            width: 30px;
+            height: 30px;
+        }
+
+        .outro {
+
+            bottom: 0%;
+            position: fixed;
+            right: 0.1%;
+
+        }
+    </style>
+    <script src="index.js" defer></script>
+</head>
+
+<body class="img">
+    <div class="body">
+        <div class="card">
+            <div class="search">
+                <h2 class="heading"><b>Weather Forecast</h2></b>
+                <input type="text" class="search-bar" placeholder="Enter Location">
+                <button class="button"><svg stroke="currentColor" fill="currentColor" stroke-width="0"
+                        viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M505.04 442.66l-99.71-99.69c-4.5-4.5-10.6-7-17-7h-16.3c27.6-35.3 44-79.69 44-127.99C416.03 93.09 322.92 0 208.02 0S0 93.09 0 207.98s93.11 207.98 208.02 207.98c48.3 0 92.71-16.4 128.01-44v16.3c0 6.4 2.5 12.5 7 17l99.71 99.69c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.59.1-33.99zm-297.02-90.7c-79.54 0-144-64.34-144-143.98 0-79.53 64.35-143.98 144-143.98 79.54 0 144 64.34 144 143.98 0 79.53-64.35 143.98-144 143.98zm.02-239.96c-40.78 0-73.84 33.05-73.84 73.83 0 32.96 48.26 93.05 66.75 114.86a9.24 9.24 0 0 0 14.18 0c18.49-21.81 66.75-81.89 66.75-114.86 0-40.78-33.06-73.83-73.84-73.83zm0 96c-13.26 0-24-10.75-24-24 0-13.26 10.75-24 24-24s24 10.74 24 24c0 13.25-10.75 24-24 24z">
+                        </path>
+                    </svg></button>
+            </div>
+
+            <div class="weather">
+                <div class="name">
+                    <h2 class="city"></h2>
+                    <h2 class="Cname"></h2>
+                </div>
+                <div class="temp"></div>
+                <img src=" " alt="Img not found" class="icon" />
+                <div class="description"></div>
+                <div class="humidity"></div>
+                <div class="wind"></div>
+
+            </div>
+        </div>
+        <p class="outro">Made with <svg stroke="currentColor" fill="red" stroke-width="0" viewBox="0 0 1024 1024"
+                height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M923 283.6a260.04 260.04 0 0 0-56.9-82.8 264.4 264.4 0 0 0-84-55.5A265.34 265.34 0 0 0 679.7 125c-49.3 0-97.4 13.5-139.2 39-10 6.1-19.5 12.8-28.5 20.1-9-7.3-18.5-14-28.5-20.1-41.8-25.5-89.9-39-139.2-39-35.5 0-69.9 6.8-102.4 20.3-31.4 13-59.7 31.7-84 55.5a258.44 258.44 0 0 0-56.9 82.8c-13.9 32.3-21 66.6-21 101.9 0 33.3 6.8 68 20.3 103.3 11.3 29.5 27.5 60.1 48.2 91 32.8 48.9 77.9 99.9 133.9 151.6 92.8 85.7 184.7 144.9 188.6 147.3l23.7 15.2c10.5 6.7 24 6.7 34.5 0l23.7-15.2c3.9-2.5 95.7-61.6 188.6-147.3 56-51.7 101.1-102.7 133.9-151.6 20.7-30.9 37-61.5 48.2-91 13.5-35.3 20.3-70 20.3-103.3.1-35.3-7-69.6-20.9-101.9z">
+                </path>
+            </svg>
+            <br>By Vivek
+        </p>
+    </div>
+
+</body>
+
+</html>
