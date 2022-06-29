@@ -1,4 +1,4 @@
-# Weather site
+# Random Quotes Generator
 ###### This website fetches random quotes using typefit API and displays them whenever the user clicks the button.
 
 #### Outputs :
